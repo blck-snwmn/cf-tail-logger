@@ -26,7 +26,7 @@ export default {
 		const compressedStream = stream.pipeThrough(
 			new CompressionStream("gzip")
 		);
-		await env.LOG_BUCKET.put(`workers/tail/${date}/${fileName}_${Math.random().toString(36).substring(2, 18)}.log.gz`, await new Response(compressedStream).arrayBuffer(), {
+		await env.LOG_BUCKET.put(`tail/${scriptName}/${date}/${fileName}_${Math.random().toString(36).substring(2, 18)}.log.gz`, await new Response(compressedStream).arrayBuffer(), {
 			httpMetadata: {
 				contentType: "application/json",
 				contentEncoding: "gzip",
