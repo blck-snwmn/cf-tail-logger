@@ -13,8 +13,8 @@ wrangler deploy
 ```
 
 ## Use
-### Tail worker(note: Tail Workers is open beta)
-Add the following to your wrangler.toml
+Add the following to your wrangler.toml  
+(note: Tail Workers is open beta)
 
 ```toml
 tail_consumers = [{service = "cf-tail-logger"}]
